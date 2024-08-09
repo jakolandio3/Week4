@@ -1,27 +1,29 @@
-# Week4tut
+# Week4tut - Jakob Douglas (3813ICT-2024)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+## Angular Commands used:
 
-## Development server
+_(requires Node)_
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **npm i -g @angular/cli** _(Install Angular CLI Globally)_
+2. **ng new "app name"** _(create a new Angular application in the directory "app name")_
+3. **ng serve --open** _(run and open in browser the development server)_
+4. **ng build** _(build dist files for production)_
 
-## Code scaffolding
+5. **ng generate component component-name"** (_to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module)_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Node mudules:
 
-## Build
+1. **npm i -g @angular/cli** _(Install Angular CLI Globally)_
+2. **npm i bootstrap -save** _(Install and save bootstrap locally for the project)_
+   **\*_note: Bootstrap requires you to update the "styles" array in the angular.json file and add bootstrap css file {"node_modules/bootstrap/dist/css/bootstrap.min.css",}_**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## GIT Commands used:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **git init** _(Initialise local repository)_
+2. **git add 'file'** _(Add file/s to be tracked)_
+3. **git commit** _(commit the local changes with a message -m "message")_
+4. **git remote add origin [url
+   to your repo]** _(Add an alias for origin to remote repo (in this case on GitHub))_
+5. **git push origin [branch]** _(push the changes to remote origin on branch specified)_
+6. **git checkout -b [branch name]** _(Create a new local branch name and switching to that branch)_
+7. **git merge [branch name]** _(Merge another branch with your currently opened branch)_
