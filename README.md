@@ -11,11 +11,14 @@ _(requires Node)_
 
 5. **ng generate component component-name"** (_to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module)_
 
-## Node mudules:
+## Node modules:
 
 1. **npm i -g @angular/cli** _(Install Angular CLI Globally)_
 2. **npm i bootstrap -save** _(Install and save bootstrap locally for the project)_
    **\*_note: Bootstrap requires you to update the "styles" array in the angular.json file and add bootstrap css file {"node_modules/bootstrap/dist/css/bootstrap.min.css",}_**
+3. **npm i cors -save** _(Install cors for cross origin handling)_
+4. **npm i express** _(Install express for our back end in server folder)_
+5. **npm i nodemon -g** _(Install global nodemon for hot-reload on our server side)_
 
 ## GIT Commands used:
 
