@@ -35,11 +35,14 @@ export class LoginComponent {
           this.auth.saveToSessionStorage('age', res.age);
           this.auth.saveToSessionStorage('email', res.email);
           this.auth.saveToSessionStorage('valid', res.valid);
-          console.log(this.auth.checkIsValid());
+          this.auth.saveToSessionStorage('UUID', res.UUID);
+
+          this.auth.checkIsValid();
           this.router.navigate(['/account']);
         } else {
           this.error = true;
           this.auth.clearSessionStorage();
+          this.auth.checkIsValid();
         }
       });
 

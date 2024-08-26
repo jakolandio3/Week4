@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable, BehaviorSubject } from 'rxjs';
 export interface userCheck {
   email: string;
   pwd: string;
@@ -11,6 +12,8 @@ export interface userObj {
   age?: number;
   email?: string;
   valid?: boolean;
+  UUID?: number;
+  password?: string;
 }
 
 @Injectable({
@@ -21,10 +24,12 @@ export class CheckAuthService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
-  valid: null | string | boolean = false;
+  valid: any;
+  getValid: any;
 
-  constructor(private httpClient: HttpClient) {
-    this.valid = sessionStorage.getItem('valid');
+  constructor(private httpClient: HttpClient, private router: Router) {
+    this.valid = new BehaviorSubject(sessionStorage.getItem('valid'));
+    this.getValid = this.valid.asObservable();
   }
   login(data: userCheck): Observable<userObj> {
     console.log('checking', data);
@@ -34,9 +39,29 @@ export class CheckAuthService {
       this.httpOptions
     );
   }
-  logout(): void {}
+  logout(): any {
+    this.httpClient
+      .post(
+        this.BACKENDURL + '/api/auth/logout',
+        JSON.stringify({ data: sessionStorage.getItem('UUID') }),
+        this.httpOptions
+      )
+      .subscribe((res) => console.log(res));
+    this.router.navigate(['/login']);
+    this.clearSessionStorage();
+    this.checkIsValid();
+  }
+
+  updateUser(data: userObj): Observable<userObj> {
+    console.log('updating');
+    return this.httpClient.post(
+      this.BACKENDURL + '/api/auth/update',
+      data,
+      this.httpOptions
+    );
+  }
   checkIsValid() {
-    this.valid = sessionStorage.getItem('valid');
+    this.valid.next(sessionStorage.getItem('valid'));
     if (this.valid && this.valid === 'true') {
       return true;
     } else return false;

@@ -14,3 +14,5 @@ http.listen(port, () => {
 });
 
 app.post("/api/auth", require("./routes/postLogin"));
+app.post("/api/auth/update", require("./routes/updateUser"));
+app.post("/api/auth/logout", require("./routes/logoutUser"));

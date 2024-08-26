@@ -6,12 +6,27 @@
           class="pl-3 navbar-nav ms-4 mb-lg-0 d-flex w-100 flex-row justify-content-between"
         >
           <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
+            <button
+              class="nav-link"
+              *ngIf="loggedIn; else login2"
+              (click)="logOut()"
+            >
+              Logout
+            </button>
+            <ng-template #login2>
+              <a class="nav-link" routerLink="/login">Login</a>
+            </ng-template>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/account">Account</a>
-          </li>
+          <ng-template [ngIf]="loggedIn">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/account">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile">Profile</a>
+            </li>
+          </ng-template>
         </ul>
       </div>
     </div>

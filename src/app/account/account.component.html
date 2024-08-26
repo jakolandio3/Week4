@@ -1,8 +1,28 @@
 <div class="d-flex flex-column">
-  <h2><div class="p3 text-secondary">Welcome Jakob!</div></h2>
+  <h2>
+    <div class="p3 text-secondary">Welcome {{ username }}!</div>
+  </h2>
   <img src="/img/about.jpg" alt="" class="rounded img-fluid" />
   <div class="border border-dark rounded p-3 mt-1">
-    <h4>About Me</h4>
+    <h2 class="d-flex justify-content-center mb-3 border-bottom border-dark">
+      About Me:
+    </h2>
+    <div class="d-flex justify-content-between">
+      <div class="d-inline-flex flex-column">
+        <h4>Name:</h4>
+        <p>{{ username }}</p>
+      </div>
+      <div class="d-inline-flex flex-column">
+        <h4>Email:</h4>
+        <p>{{ email }}</p>
+      </div>
+      <div class="d-inline-flex flex-column">
+        <h4>Age:</h4>
+        <p>{{ age }}</p>
+      </div>
+    </div>
+    <h4>Birthday:</h4>
+    <p>{{ birthday }}</p>
     <h4>Bio:</h4>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, illo!
@@ -10,9 +30,5 @@
       perferendis facere nisi fuga itaque illum. Quibusdam ab atque
       perspiciatis.
     </p>
-    <h4>Name:</h4>
-    <p>Jakob Douglas</p>
-    <h4>email:</h4>
-    <p>emal&#64;test</p>
   </div>
 </div>

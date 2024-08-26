@@ -21,7 +21,7 @@ export class AccountComponent implements OnInit {
     this.birthday = this.auth.getFromSessionStorage('birthday');
     this.age = Number(this.auth.getFromSessionStorage('age'));
     this.email = this.auth.getFromSessionStorage('email');
-    this.valid = this.auth.checkIsValid();
+    this.auth.getValid.subscribe((val: any) => (this.valid = val));
   }
   ngOnInit(): void {
     if (!this.valid) {
