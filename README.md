@@ -1,4 +1,19 @@
-# Week4tut - Jakob Douglas (3813ICT-2024)
+# Week4/5tut - Jakob Douglas (3813ICT-2024)
+
+## Updated to week 5 content
+
+### New Content(week5):
+
+1. Server implemented with expressJS in folder src/server
+2. Login action now makes a call to the remote server running from express
+3. Services folder implemented in Angular App
+4. Check-Auth service takes care of Login/Out and Updating User and is available as an injectable dependency to use in all root components
+5. Failed auth checks will redirect to login
+6. On successful login/auth check additional links to Profile and Edit profile are available
+7. A logout button is shown if user is logged in and will logout and redirect user to login on click
+8. A component for editing user details is available under profile
+9. Profile will check validation of user and redirect back to login if user is not logged in
+10. User Data when fetched is stored in sessionStorage and updated/removed accordingly
 
 ## Angular Commands used:
 
