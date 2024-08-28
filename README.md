@@ -4,6 +4,14 @@
 
 ### New Content(week5):
 
+Link to Video explanation:
+
+Part1:
+https://www.loom.com/share/8a2244d29629438da6923656d7156da9
+
+Part2:
+https://www.loom.com/share/a96b98de30a04479b0e99bbd5a00da81
+
 1. Server implemented with expressJS in folder src/server
 2. Login action now makes a call to the remote server running from express
 3. Services folder implemented in Angular App
